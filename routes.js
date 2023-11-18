@@ -1,5 +1,3 @@
-// routes.js
-
 const express = require("express");
 const todo = require("./todo");
 

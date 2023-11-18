@@ -1,5 +1,3 @@
-// app.js
-
 const express = require("express");
 const bodyParser = require("body-parser");
 const routes = require("./routes");
@@ -11,7 +9,6 @@ const port = 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 
-// Serve static files from the 'public' directory
 app.use("/public", express.static(path.join(__dirname, "public")));
 
 routes(app);
