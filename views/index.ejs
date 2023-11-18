@@ -1,0 +1,37 @@
+<!-- views/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDo App</title>
+    <link rel="stylesheet" href="/public/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>ToDo List</h1>
+      <form action="/add" method="post">
+        <label for="newTask">Add a new task:</label>
+        <input type="text" id="newTask" name="newTask" required autofocus />
+        <button type="submit" class="add-button">Add</button>
+      </form>
+      <ul>
+        <% tasks.forEach((task, index) => { %>
+        <li>
+          <span><%= index + 1 %>.</span>
+          <span><%= task %></span>
+          <form action="/complete" method="post" style="display: inline">
+            <input type="hidden" name="taskIndex" value="<%= index + 1 %>" />
+            <button type="submit">Complete</button>
+          </form>
+          <form action="/delete" method="post" style="display: inline">
+            <input type="hidden" name="taskIndex" value="<%= index + 1 %>" />
+            <button type="submit">Delete</button>
+          </form>
+        </li>
+        <% }); %>
+      </ul>
+    </div>
+  </body>
+</html>
