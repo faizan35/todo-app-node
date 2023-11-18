@@ -2,7 +2,7 @@
 
 A simple ToDo list web application built with Node.js and Express.
 
-![todo-image](public\todo-img.png)
+![todo-image](public/todo-img.png)
 
 ## Getting Started
 
