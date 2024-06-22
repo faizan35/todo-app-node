@@ -12,6 +12,8 @@ function setupRoutes(app) {
   app.post("/add", (req, res) => {
     const newTask = req.body.newTask;
     const tasks = todo.loadTasks();
+    // console.log("req.body task = "+req.body.newTask);
+    // console.log("req.body = " + JSON.stringify(req.body));
     tasks.push(newTask);
     todo.saveTasks(tasks);
     res.redirect("/");
